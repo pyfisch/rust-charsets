@@ -201,12 +201,14 @@ mod tests {
 
     #[test]
     fn test_display() {
-        assert_eq!("US-ASCII", format!("{}", UsAscii));
-        assert_eq!("ABCD", format!("{}", Unregistered("ABCD".to_owned())));
+        assert_eq!("US-ASCII", UsAscii.to_string());
+        assert_eq!("ABCD", Unregistered("ABCD".to_owned()).to_string());
     }
 
     #[test]
     fn test_cmp() {
+        assert!(Iso88593 == Iso88593);
+        assert!(UsAscii != Iso88593);
         assert_eq!(Unregistered("foobar".to_owned()), Unregistered("FOOBAR".to_owned()));
     }
 }

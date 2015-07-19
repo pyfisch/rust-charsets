@@ -17,3 +17,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+The code is based on the charset implementation of hyper:
+https://github.com/hyperium/hyper/blob/7b108466f6a53d0ffdc6c7889d1a01fca251e462/src/header/shared/charset.rs
+licensed under MIT, written by seanmonstar, SBSTP, hugoduncan, fhartwig and Pyfisch.
