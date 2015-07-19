@@ -1,12 +1,27 @@
+#![deny(missing_docs)]
+#![cfg_attr(test, deny(warnings))]
+
+//! The crate provides an enum representing all charset names used in Media Types
+//! and HTTP header values. The list can be found at [the IANA Character Sets
+//! registry](http://www.iana.org/assignments/character-sets/character-sets.xhtml).
+//!
+//! Charset names can be parsed from string, formatted to string and compared.
+//! Charset names can be parsed from string, formatted to string and compared.
+//! Unregistered charsets are represented using an `Unregistered` variant.
+
 use std::fmt::{self, Display};
 use std::str::FromStr;
 use std::ascii::AsciiExt;
 use std::error::Error as ErrorTrait;
 
-use self::Charset::*;
+pub use self::Charset::*;
 
+/// An error type used for this crate.
+///
+/// It may be extended in the future to give more information.
 #[derive(Debug, Eq, PartialEq)]
 pub enum Error {
+    /// Parsing as as charset failed.
     Invalid
 }
 
@@ -171,22 +186,27 @@ impl PartialEq for Charset {
     }
 }
 
-#[test]
-fn test_parse() {
-    assert_eq!(UsAscii,"us-ascii".parse().unwrap());
-    assert_eq!(UsAscii,"US-Ascii".parse().unwrap());
-    assert_eq!(UsAscii,"US-ASCII".parse().unwrap());
-    assert_eq!(ShiftJis,"Shift-JIS".parse().unwrap());
-    assert_eq!(Unregistered("ABCD".to_owned()),"abcd".parse().unwrap());
-}
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-#[test]
-fn test_display() {
-    assert_eq!("US-ASCII", format!("{}", UsAscii));
-    assert_eq!("ABCD", format!("{}", Unregistered("ABCD".to_owned())));
-}
+    #[test]
+    fn test_parse() {
+        assert_eq!(UsAscii,"us-ascii".parse().unwrap());
+        assert_eq!(UsAscii,"US-Ascii".parse().unwrap());
+        assert_eq!(UsAscii,"US-ASCII".parse().unwrap());
+        assert_eq!(ShiftJis,"Shift-JIS".parse().unwrap());
+        assert_eq!(Unregistered("ABCD".to_owned()),"abcd".parse().unwrap());
+    }
 
-#[test]
-fn test_cmp() {
-    assert_eq!(Unregistered("foobar".to_owned()), Unregistered("FOOBAR".to_owned()));
+    #[test]
+    fn test_display() {
+        assert_eq!("US-ASCII", format!("{}", UsAscii));
+        assert_eq!("ABCD", format!("{}", Unregistered("ABCD".to_owned())));
+    }
+
+    #[test]
+    fn test_cmp() {
+        assert_eq!(Unregistered("foobar".to_owned()), Unregistered("FOOBAR".to_owned()));
+    }
 }
