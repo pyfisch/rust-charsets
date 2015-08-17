@@ -2,3 +2,9 @@
 name = "charsets"
 version = "0.1.0"
 authors = ["Pyfisch <pyfisch@gmail.com>"]
+description = "An enum representing all charset names commonly used."
+readme = "README.md"
+documentation = "http://pyfisch.github.io/rust-charsets/rust-charsets/index.html"
+repository = "https://github.com/pyfisch/rust-charsets"
+license = "MIT"
+keywords = ["http", "charset", "encoding", "mime", "media-types"]

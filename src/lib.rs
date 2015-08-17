@@ -1,4 +1,4 @@
-#![deny(missing_docs)]
+#![cfg_attr(test, deny(missing_docs))]
 #![cfg_attr(test, deny(warnings))]
 
 //! The crate provides an enum representing all charset names used in Media Types

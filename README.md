@@ -4,6 +4,8 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![crates.io](http://meritbadge.herokuapp.com/rust-charsets)](https://crates.io/crates/rust-charsets)
 
+The documentation is located at http://pyfisch.github.io/rust-charsets/
+
 The crate provides an enum representing all charset names used in Media Types
 and HTTP header values. The list can be found at [the IANA Character Sets
 registry](http://www.iana.org/assignments/character-sets/character-sets.xhtml).
