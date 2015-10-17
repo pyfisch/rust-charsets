@@ -22,12 +22,12 @@ pub use self::Charset::*;
 #[derive(Debug, Eq, PartialEq)]
 pub enum Error {
     /// Parsing as as charset failed.
-    Invalid
+    Invalid,
 }
 
 impl ErrorTrait for Error {
     fn description(&self) -> &str {
-        return "The given charset is invalid"
+        return "The given charset is invalid";
     }
 }
 
@@ -46,7 +46,7 @@ pub type Result<T> = ::std::result::Result<T, Error>;
 ///
 /// See http://www.iana.org/assignments/character-sets/character-sets.xhtml
 #[derive(Clone, Debug, Eq, Ord, PartialOrd)]
-pub enum Charset{
+pub enum Charset {
     /// US ASCII
     UsAscii,
     /// ISO-8859-1
@@ -95,45 +95,47 @@ pub enum Charset{
     Big5,
     /// KOI8-R
     Koi8R,
+    /// UTF-8
+    Utf8,
     /// An arbitrary charset specified as a string
-    Unregistered(String)
+    Unregistered(String),
 }
 
-const MAPPING: [(Charset, &'static str); 24] = [
-    (UsAscii, "US-ASCII"),
-    (Iso88591, "ISO-8859-1"),
-    (Iso88592, "ISO-8859-2"),
-    (Iso88593, "ISO-8859-3"),
-    (Iso88594, "ISO-8859-4"),
-    (Iso88595, "ISO-8859-5"),
-    (Iso88596, "ISO-8859-6"),
-    (Iso88597, "ISO-8859-7"),
-    (Iso88598, "ISO-8859-8"),
-    (Iso88599, "ISO-8859-9"),
-    (Iso885910, "ISO-8859-10"),
-    (ShiftJis, "Shift-JIS"),
-    (EucJp, "EUC-JP"),
-    (Iso2022Kr, "ISO-2022-KR"),
-    (EucKr, "EUC-KR"),
-    (Iso2022Jp, "ISO-2022-JP"),
-    (Iso2022Jp2, "ISO-2022-JP-2"),
-    (Iso88596E, "ISO-8859-6-E"),
-    (Iso88596I, "ISO-8859-6-I"),
-    (Iso88598E, "ISO-8859-8-E"),
-    (Iso88598I, "ISO-8859-8-I"),
-    (Gb2312, "GB2312"),
-    (Big5, "5"),
-    (Koi8R, "KOI8-R")
-];
+const MAPPING: [(Charset, &'static str); 25] = [(UsAscii, "US-ASCII"),
+ (Iso88591, "ISO-8859-1"),
+ (Iso88592, "ISO-8859-2"),
+ (Iso88593, "ISO-8859-3"),
+ (Iso88594, "ISO-8859-4"),
+ (Iso88595, "ISO-8859-5"),
+ (Iso88596, "ISO-8859-6"),
+ (Iso88597, "ISO-8859-7"),
+ (Iso88598, "ISO-8859-8"),
+ (Iso88599, "ISO-8859-9"),
+ (Iso885910, "ISO-8859-10"),
+ (ShiftJis, "Shift-JIS"),
+ (EucJp, "EUC-JP"),
+ (Iso2022Kr, "ISO-2022-KR"),
+ (EucKr, "EUC-KR"),
+ (Iso2022Jp, "ISO-2022-JP"),
+ (Iso2022Jp2, "ISO-2022-JP-2"),
+ (Iso88596E, "ISO-8859-6-E"),
+ (Iso88596I, "ISO-8859-6-I"),
+ (Iso88598E, "ISO-8859-8-E"),
+ (Iso88598I, "ISO-8859-8-I"),
+ (Gb2312, "GB2312"),
+ (Big5, "5"),
+ (Koi8R, "KOI8-R"),
+ (Utf8, "utf-8")];
 
 impl Charset {
     fn name(&self) -> &str {
         if let &Unregistered(ref s) = self {
-            return &s[..]
+            return &s[..];
         }
         MAPPING.iter()
-            .find(|&&(ref variant, _)| self == variant)
-            .map(|&(_, name)| name).unwrap()
+               .find(|&&(ref variant, _)| self == variant)
+               .map(|&(_, name)| name)
+               .unwrap()
     }
 }
 
@@ -147,9 +149,9 @@ impl FromStr for Charset {
     type Err = ::Error;
     fn from_str(s: &str) -> ::Result<Charset> {
         Ok(MAPPING.iter()
-            .find(|&&(_, ref name)| name.eq_ignore_ascii_case(s))
-            .map(|&(ref variant, _)| variant.to_owned())
-            .unwrap_or(Unregistered(s.to_owned())))
+                  .find(|&&(_, ref name)| name.eq_ignore_ascii_case(s))
+                  .map(|&(ref variant, _)| variant.to_owned())
+                  .unwrap_or(Unregistered(s.to_owned())))
     }
 }
 
@@ -179,9 +181,10 @@ impl PartialEq for Charset {
             (&Iso88598I, &Iso88598I) |
             (&Gb2312, &Gb2312) |
             (&Big5, &Big5) |
-            (&Koi8R, &Koi8R) => true,
+            (&Koi8R, &Koi8R) |
+            (&Utf8, &Utf8) => true,
             (&Unregistered(ref s), &Unregistered(ref t)) => s.eq_ignore_ascii_case(t),
-            _ => false
+            _ => false,
         }
     }
 }
@@ -192,11 +195,11 @@ mod tests {
 
     #[test]
     fn test_parse() {
-        assert_eq!(UsAscii,"us-ascii".parse().unwrap());
-        assert_eq!(UsAscii,"US-Ascii".parse().unwrap());
-        assert_eq!(UsAscii,"US-ASCII".parse().unwrap());
-        assert_eq!(ShiftJis,"Shift-JIS".parse().unwrap());
-        assert_eq!(Unregistered("ABCD".to_owned()),"abcd".parse().unwrap());
+        assert_eq!(UsAscii, "us-ascii".parse().unwrap());
+        assert_eq!(UsAscii, "US-Ascii".parse().unwrap());
+        assert_eq!(UsAscii, "US-ASCII".parse().unwrap());
+        assert_eq!(ShiftJis, "Shift-JIS".parse().unwrap());
+        assert_eq!(Unregistered("ABCD".to_owned()), "abcd".parse().unwrap());
     }
 
     #[test]
@@ -209,6 +212,7 @@ mod tests {
     fn test_cmp() {
         assert!(Iso88593 == Iso88593);
         assert!(UsAscii != Iso88593);
-        assert_eq!(Unregistered("foobar".to_owned()), Unregistered("FOOBAR".to_owned()));
+        assert_eq!(Unregistered("foobar".to_owned()),
+                   Unregistered("FOOBAR".to_owned()));
     }
 }
