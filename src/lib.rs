@@ -12,33 +12,8 @@
 use std::fmt::{self, Display};
 use std::str::FromStr;
 use std::ascii::AsciiExt;
-use std::error::Error as ErrorTrait;
 
 pub use self::Charset::*;
-
-/// An error type used for this crate.
-///
-/// It may be extended in the future to give more information.
-#[derive(Debug, Eq, PartialEq)]
-pub enum Error {
-    /// Parsing as as charset failed.
-    Invalid,
-}
-
-impl ErrorTrait for Error {
-    fn description(&self) -> &str {
-        return "The given charset is invalid";
-    }
-}
-
-impl Display for Error {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        f.write_str(self.description())
-    }
-}
-
-/// Result type used for this library.
-pub type Result<T> = ::std::result::Result<T, Error>;
 
 /// A Mime charset.
 ///
@@ -146,8 +121,8 @@ impl Display for Charset {
 }
 
 impl FromStr for Charset {
-    type Err = ::Error;
-    fn from_str(s: &str) -> ::Result<Charset> {
+    type Err = ();
+    fn from_str(s: &str) -> Result<Charset, ()> {
         Ok(MAPPING.iter()
                   .find(|&&(_, ref name)| name.eq_ignore_ascii_case(s))
                   .map(|&(ref variant, _)| variant.to_owned())

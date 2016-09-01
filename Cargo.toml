@@ -1,6 +1,6 @@
 [package]
 name = "charsets"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Pyfisch <pyfisch@gmail.com>"]
 description = "An enum representing all charset names commonly used."
 readme = "README.md"
