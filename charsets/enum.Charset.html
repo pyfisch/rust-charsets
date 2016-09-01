@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Charset` enum in crate `charsets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Charset">
+
+    <title>charsets::Charset - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>charsets</a></p><script>window.sidebarCurrent = {name: 'Charset', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>charsets</a>::<wbr><a class='enum' href=''>Charset</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-93' class='srclink' href='../src/charsets/src/lib.rs.html#24-77' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Charset {
+    UsAscii,
+    Iso88591,
+    Iso88592,
+    Iso88593,
+    Iso88594,
+    Iso88595,
+    Iso88596,
+    Iso88597,
+    Iso88598,
+    Iso88599,
+    Iso885910,
+    ShiftJis,
+    EucJp,
+    Iso2022Kr,
+    EucKr,
+    Iso2022Jp,
+    Iso2022Jp2,
+    Iso88596E,
+    Iso88596I,
+    Iso88598E,
+    Iso88598I,
+    Gb2312,
+    Big5,
+    Koi8R,
+    Utf8,
+    Unregistered(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>),
+}</pre><div class='docblock'><p>A Mime charset.</p>
+
+<p>The string representation is normalised to upper case.</p>
+
+<p>See <a href="http://www.iana.org/assignments/character-sets/character-sets.xhtml">http://www.iana.org/assignments/character-sets/character-sets.xhtml</a></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.UsAscii' class='variant'><code>UsAscii</code></span><div class='docblock'><p>US ASCII</p>
+</div><span id='variant.Iso88591' class='variant'><code>Iso88591</code></span><div class='docblock'><p>ISO-8859-1</p>
+</div><span id='variant.Iso88592' class='variant'><code>Iso88592</code></span><div class='docblock'><p>ISO-8859-2</p>
+</div><span id='variant.Iso88593' class='variant'><code>Iso88593</code></span><div class='docblock'><p>ISO-8859-3</p>
+</div><span id='variant.Iso88594' class='variant'><code>Iso88594</code></span><div class='docblock'><p>ISO-8859-4</p>
+</div><span id='variant.Iso88595' class='variant'><code>Iso88595</code></span><div class='docblock'><p>ISO-8859-5</p>
+</div><span id='variant.Iso88596' class='variant'><code>Iso88596</code></span><div class='docblock'><p>ISO-8859-6</p>
+</div><span id='variant.Iso88597' class='variant'><code>Iso88597</code></span><div class='docblock'><p>ISO-8859-7</p>
+</div><span id='variant.Iso88598' class='variant'><code>Iso88598</code></span><div class='docblock'><p>ISO-8859-8</p>
+</div><span id='variant.Iso88599' class='variant'><code>Iso88599</code></span><div class='docblock'><p>ISO-8859-9</p>
+</div><span id='variant.Iso885910' class='variant'><code>Iso885910</code></span><div class='docblock'><p>ISO-8859-10</p>
+</div><span id='variant.ShiftJis' class='variant'><code>ShiftJis</code></span><div class='docblock'><p>Shift_JIS</p>
+</div><span id='variant.EucJp' class='variant'><code>EucJp</code></span><div class='docblock'><p>EUC-JP</p>
+</div><span id='variant.Iso2022Kr' class='variant'><code>Iso2022Kr</code></span><div class='docblock'><p>ISO-2022-KR</p>
+</div><span id='variant.EucKr' class='variant'><code>EucKr</code></span><div class='docblock'><p>EUC-KR</p>
+</div><span id='variant.Iso2022Jp' class='variant'><code>Iso2022Jp</code></span><div class='docblock'><p>ISO-2022-JP</p>
+</div><span id='variant.Iso2022Jp2' class='variant'><code>Iso2022Jp2</code></span><div class='docblock'><p>ISO-2022-JP-2</p>
+</div><span id='variant.Iso88596E' class='variant'><code>Iso88596E</code></span><div class='docblock'><p>ISO-8859-6-E</p>
+</div><span id='variant.Iso88596I' class='variant'><code>Iso88596I</code></span><div class='docblock'><p>ISO-8859-6-I</p>
+</div><span id='variant.Iso88598E' class='variant'><code>Iso88598E</code></span><div class='docblock'><p>ISO-8859-8-E</p>
+</div><span id='variant.Iso88598I' class='variant'><code>Iso88598I</code></span><div class='docblock'><p>ISO-8859-8-I</p>
+</div><span id='variant.Gb2312' class='variant'><code>Gb2312</code></span><div class='docblock'><p>GB2312</p>
+</div><span id='variant.Big5' class='variant'><code>Big5</code></span><div class='docblock'><p>Big5</p>
+</div><span id='variant.Koi8R' class='variant'><code>Koi8R</code></span><div class='docblock'><p>KOI8-R</p>
+</div><span id='variant.Utf8' class='variant'><code>Utf8</code></span><div class='docblock'><p>UTF-8</p>
+</div><span id='variant.Unregistered' class='variant'><code>Unregistered(<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>)</code></span><div class='docblock'><p>An arbitrary charset specified as a string</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-8' class='srclink' href='../src/charsets/src/lib.rs.html#23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.partial_cmp' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#tymethod.partial_cmp' class='fnname'>partial_cmp</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a>&gt;</code></h4>
+<div class='docblock'><p>This method returns an ordering between <code>self</code> and <code>other</code> values if one exists. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#tymethod.partial_cmp">Read more</a></p>
+</div><h4 id='method.lt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.lt' class='fnname'>lt</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests less than (for <code>self</code> and <code>other</code>) and is used by the <code>&lt;</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.lt">Read more</a></p>
+</div><h4 id='method.le' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.le' class='fnname'>le</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests less than or equal to (for <code>self</code> and <code>other</code>) and is used by the <code>&lt;=</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.le">Read more</a></p>
+</div><h4 id='method.gt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.gt' class='fnname'>gt</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests greater than (for <code>self</code> and <code>other</code>) and is used by the <code>&gt;</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.gt">Read more</a></p>
+</div><h4 id='method.ge' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.ge' class='fnname'>ge</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests greater than or equal to (for <code>self</code> and <code>other</code>) and is used by the <code>&gt;=</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.ge">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html' title='core::cmp::Ord'>Ord</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-45' class='srclink' href='../src/charsets/src/lib.rs.html#23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.cmp' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#tymethod.cmp' class='fnname'>cmp</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a></code></h4>
+<div class='docblock'><p>This method returns an <code>Ordering</code> between <code>self</code> and <code>other</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#tymethod.cmp">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-54' class='srclink' href='../src/charsets/src/lib.rs.html#23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-58' class='srclink' href='../src/charsets/src/lib.rs.html#23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89' class='srclink' href='../src/charsets/src/lib.rs.html#23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html' title='core::fmt::Display'>Display</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-131' class='srclink' href='../src/charsets/src/lib.rs.html#117-121' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html' title='core::str::FromStr'>FromStr</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-135' class='srclink' href='../src/charsets/src/lib.rs.html#123-131' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Err' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#associatedtype.Err' class='type'>Err</a> = <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a></code></h4>
+<div class='docblock'><p>The associated error which can be returned from parsing.</p>
+</div><h4 id='method.from_str' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str' class='fnname'>from_str</a>(s: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a>,&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+<div class='docblock'><p>Parses a string <code>s</code> to return a value of this type. <a href="https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../charsets/enum.Charset.html' title='charsets::Charset'>Charset</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-143' class='srclink' href='../src/charsets/src/lib.rs.html#133-165' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;Self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "charsets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
